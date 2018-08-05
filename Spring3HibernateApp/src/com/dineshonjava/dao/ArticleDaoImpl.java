@@ -42,4 +42,9 @@ public class ArticleDaoImpl implements ArticleDao {
 		
 	}
 
+	@Override
+	public rule getrule() {
+		return (rule) sessionFactory.getCurrentSession().get(rule.class, 1);
+	}
+
 }

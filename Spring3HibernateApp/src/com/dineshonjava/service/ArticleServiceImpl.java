@@ -45,4 +45,9 @@ public class ArticleServiceImpl implements ArticleService {
 		
 	}
 
+	@Override
+	public rule getrule() {		
+		return articleDao.getrule();
+	}
+
 }

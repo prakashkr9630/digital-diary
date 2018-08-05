@@ -59,12 +59,17 @@ public class EnglishController {
 	
 	@RequestMapping(value = "/addrulefortopic", method = RequestMethod.POST)		
 	public ModelAndView addrulefortopic(@RequestParam("title") String title, @RequestParam("topic") String topic,@RequestParam("ruletext") String ruletext) {
+		ModelAndView mvc = new ModelAndView("englishadmin");
 		rule Rule= new rule();
 		Rule.setRuletext(ruletext);
 		Rule.setTopic(topic);
 		Rule.setTitle(title);
 		articleService.addrule(Rule);
-		return new ModelAndView("englishadmin");
+		rule rr = articleService.getrule();
+		System.err.println(rr.getRuletext());
+		System.out.println(rr.getTitle());
+		mvc.addObject("rule", rr);
+		return mvc;
 		
 	}
 
