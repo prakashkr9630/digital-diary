@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dineshonjava.dao.ArticleDao;
 import com.dineshonjava.model.Article;
+import com.dineshonjava.model.rule;
 
 /**
  * @author Prakash
@@ -36,6 +37,12 @@ public class ArticleServiceImpl implements ArticleService {
 	
 	public void deleteArticle(Article article) {
 		articleDao.deleteArticle(article);
+	}
+
+	@Override
+	public void addrule(rule rule) {
+		articleDao.addrule(rule);
+		
 	}
 
 }

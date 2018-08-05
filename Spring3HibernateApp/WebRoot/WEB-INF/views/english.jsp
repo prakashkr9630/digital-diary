@@ -37,35 +37,19 @@
 </style>
 </head>
 <body>
-
 	<table>
 
-		<tr>
-			<td><a href="<%=request.getContextPath()%>/insert.html">
-					<button class="button">Add</button>
+		<tr>			
+			<td><a href="<%=request.getContextPath()%>/englishadmin.html">
+					<button class="button">Admin</button>
 			</a></td>
-			<td><a href="<%=request.getContextPath()%>/add.html">
-					<button class="button">list</button>
+			<td><a href="<%=request.getContextPath()%>/englishstudent.html">
+					<button class="button">student</button>
 			</a></td>
-			<td><a href="<%=request.getContextPath()%>/setting.html">
-					<button class="button">Settings</button>
-			</a></td>
-
-			<td><a href="<%=request.getContextPath()%>/search.html">
-					<button class="button">Search</button>
-			</a></td>
-
-			<td><a href="<%=request.getContextPath()%>/relate.html">
-					<button class="button">RelateArticle</button>
-			</a></td>
-
-			<td><a href="<%=request.getContextPath()%>/english.html">
-					<button class="button">English test</button>
-			</a></td>
+			
 		</tr>
 
-	</table>
-	<!-- for line -->
+	</table>	
 	<hr>
 </body>
 </html>

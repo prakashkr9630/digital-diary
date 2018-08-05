@@ -72,7 +72,6 @@ public class ArticleController {
 			modelandview.addObject("error","Either of the field is Empty");
 		}
 		
-		// return new ModelAndView("redirect:/add.html");
 
 		return modelandview;
 	}

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.dineshonjava.model.Article;
+import com.dineshonjava.model.rule;
 
 /**
  * @author Prakash
@@ -33,6 +34,12 @@ public class ArticleDaoImpl implements ArticleDao {
 
 	public void deleteArticle(Article article) {		
 		sessionFactory.getCurrentSession().createQuery("DELETE FROM Article WHERE id = "+article.getId()).executeUpdate();
+	}
+
+	@Override
+	public void addrule(rule rule) {
+		sessionFactory.getCurrentSession().save(rule);
+		
 	}
 
 }
