@@ -19,11 +19,24 @@ input {
 }
 
 textarea {
-	font-family: imes New Roman;
+	font-family: times new roman;
 	font-size: 20pt;
+}
+qa{
+font-size: 40px;
+ background-color: teal;
 }
 </STYLE>
 </head>
+
+	<c:if test="${!empty status}">
+	<qa> Rule saved successfully &#10004; 
+	<a href="<%=request.getContextPath()%>/englishadmin.html">Go Back to Rules Page</a>	
+	</c:if>
+
+
+
+
 <body>
 	<form name="relatearticle" method="POST"
 		action="/sdnext/addrulefortopic.html">
@@ -43,7 +56,7 @@ textarea {
 			</tr>
 			<tr>
 				<td></td>
-				<td><textarea name="ruletext" rows="10" cols="90"></textarea></td>
+				<td><textarea name="ruletext" rows="10" cols="90" wrap="hard" ></textarea></td>
 			</tr>
 			<tr>
 				<td></td>

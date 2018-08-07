@@ -59,8 +59,11 @@
 					<button class="button">RelateArticle</button>
 			</a></td>
 
-			<td><a href="<%=request.getContextPath()%>/english.html">
+			<%-- <td><a href="<%=request.getContextPath()%>/english.html">
 					<button class="button">English test</button>
+			</a></td> --%>
+			<td><a href="<%=request.getContextPath()%>/englishadmin.html">
+					<button class="button">English</button>
 			</a></td>
 		</tr>
 

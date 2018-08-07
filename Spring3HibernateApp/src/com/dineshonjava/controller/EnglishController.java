@@ -1,5 +1,7 @@
 package com.dineshonjava.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +33,10 @@ public class EnglishController {
 	
 	@RequestMapping(value = "/englishadmin", method = RequestMethod.GET)
 	public ModelAndView englishadmin() {
-		return new ModelAndView("englishadmin");
+		ModelAndView mvc = new ModelAndView("englishadmin");
+		List<rule> allrules = articleService.getrule();		
+		mvc.addObject("rule", allrules);
+		return mvc;
 	}
 	
 	
@@ -51,26 +56,18 @@ public class EnglishController {
 	@RequestMapping(value = "/addexample", method = RequestMethod.GET)
 	public ModelAndView addexample() {
 		return new ModelAndView("addexample");
-	}
-	
-	
-	
-	
+	}				
 	
 	@RequestMapping(value = "/addrulefortopic", method = RequestMethod.POST)		
 	public ModelAndView addrulefortopic(@RequestParam("title") String title, @RequestParam("topic") String topic,@RequestParam("ruletext") String ruletext) {
-		ModelAndView mvc = new ModelAndView("englishadmin");
+		ModelAndView mvc = new ModelAndView("addrule");
 		rule Rule= new rule();
 		Rule.setRuletext(ruletext);
 		Rule.setTopic(topic);
 		Rule.setTitle(title);
-		articleService.addrule(Rule);
-		rule rr = articleService.getrule();
-		System.err.println(rr.getRuletext());
-		System.out.println(rr.getTitle());
-		mvc.addObject("rule", rr);
-		return mvc;
-		
+		articleService.addrule(Rule);		
+		mvc.addObject("status", "ok");
+		return mvc;		
 	}
 
 }

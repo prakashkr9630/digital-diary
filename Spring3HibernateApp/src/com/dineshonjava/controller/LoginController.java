@@ -9,8 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginController {
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public ModelAndView welcome() {
-		System.out.println("here");
+	public ModelAndView welcome() {		
 		return new ModelAndView("index");
 	}
 		

@@ -38,13 +38,14 @@ public class ArticleDaoImpl implements ArticleDao {
 
 	@Override
 	public void addrule(rule rule) {
-		sessionFactory.getCurrentSession().save(rule);
+		 sessionFactory.getCurrentSession().save(rule);
 		
 	}
 
 	@Override
-	public rule getrule() {
-		return (rule) sessionFactory.getCurrentSession().get(rule.class, 1);
+	public List<rule> getrule() {
+		//return (rule) sessionFactory.getCurrentSession().get(rule.class, 1);
+		return  (List<rule>) sessionFactory.getCurrentSession().createCriteria(rule.class).list();
 	}
 
 }

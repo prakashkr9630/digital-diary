@@ -24,5 +24,5 @@ public interface ArticleDao {
 	 */
 	
 	public void addrule(rule rule);
-	public rule getrule();
+	public List<rule> getrule();
 }
