@@ -40,7 +40,9 @@ http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 				<value>com.dineshonjava.model.Category</value>				
 				<value>com.dineshonjava.model.Relate</value>
 				<value>com.dineshonjava.model.RelateUrl</value>
-				<value>com.dineshonjava.model.rule</value>				
+				<value>com.dineshonjava.model.rule</value>
+				<value>com.dineshonjava.model.QuestionSet</value>
+								
 			</list>
 		</property>
 		

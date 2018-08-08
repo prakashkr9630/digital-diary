@@ -17,11 +17,18 @@ td {
 </style>
 </head>
 <body>
+<table align="center">
+	<tr>
+		<td><a href="<%=request.getContextPath()%>/test.html?id=">Take Test</a></td>
+	</tr>
+
+</table>
 	<table>
 		<tr>
 			<td>Syntax</td>
 			<td><a href="<%=request.getContextPath()%>/addrule.html?id=Syntax">Add Rule</a></td>
-			<%-- <td><a href="<%=request.getContextPath()%>/addexample.html?id=Syntax">Add Example</a></td> --%>
+			<td><a href="<%=request.getContextPath()%>/addexample.html?id=Syntax">Add Question</a></td>
+			<td><a href="<%=request.getContextPath()%>/test.html?id=Syntax">Test</a></td>
 		</tr>
 
 		<c:if test="${!empty rule}">
@@ -48,7 +55,8 @@ td {
 		<tr>
 			<td>Noun</td>
 			<td><a href="<%=request.getContextPath()%>/addrule.html?id=Noun">Add Rule</a></td>
-			<%-- <td><a href="<%=request.getContextPath()%>/addexample.html?id=Syntax">Add Example</a></td> --%>
+			<td><a href="<%=request.getContextPath()%>/addexample.html?id=Noun">Add Question</a></td>
+			<td><a href="<%=request.getContextPath()%>/test.html?id=Noun">Test</a></td>
 		</tr>
 
 		<c:if test="${!empty rule}">
@@ -75,7 +83,8 @@ td {
 		<tr>
 			<td>Verb</td>
 			<td><a href="<%=request.getContextPath()%>/addrule.html?id=Verb">Add Rule</a></td>
-			<%-- <td><a href="<%=request.getContextPath()%>/addexample.html?id=Syntax">Add Example</a></td> --%>
+			<td><a href="<%=request.getContextPath()%>/addexample.html?id=Verb">Add Question</a></td>
+			<td><a href="<%=request.getContextPath()%>/test.html?id=Verb">Test</a></td>
 		</tr>
 
 		<c:if test="${!empty rule}">
@@ -100,7 +109,8 @@ td {
 		<tr>
 			<td>Adverb</td>
 			<td><a href="<%=request.getContextPath()%>/addrule.html?id=Adverb">Add Rule</a></td>
-			<%-- <td><a href="<%=request.getContextPath()%>/addexample.html?id=Syntax">Add Example</a></td> --%>
+			<td><a href="<%=request.getContextPath()%>/addexample.html?id=Adverb">Add Question</a></td>
+			<td><a href="<%=request.getContextPath()%>/test.html?id=Adverb">Test</a></td>
 		</tr>
 
 		<c:if test="${!empty rule}">
@@ -125,7 +135,8 @@ td {
 		<tr>
 			<td>Adjective</td>
 			<td><a href="<%=request.getContextPath()%>/addrule.html?id=Adjective">Add Rule</a></td>
-			<%-- <td><a href="<%=request.getContextPath()%>/addexample.html?id=Syntax">Add Example</a></td> --%>
+			<td><a href="<%=request.getContextPath()%>/addexample.html?id=Adjective">Add Question</a></td>
+			<td><a href="<%=request.getContextPath()%>/test.html?id=Adjective">Test</a></td>
 		</tr>
 
 		<c:if test="${!empty rule}">
@@ -150,7 +161,8 @@ td {
 		<tr>
 			<td>Preposition</td>
 			<td><a href="<%=request.getContextPath()%>/addrule.html?id=Preposition">Add Rule</a></td>
-			<%-- <td><a href="<%=request.getContextPath()%>/addexample.html?id=Syntax">Add Example</a></td> --%>
+			<td><a href="<%=request.getContextPath()%>/addexample.html?id=Preposition">Add Question</a></td>
+			<td><a href="<%=request.getContextPath()%>/test.html?id=Preposition">Test</a></td>
 		</tr>
 
 		<c:if test="${!empty rule}">
@@ -175,7 +187,8 @@ td {
 		<tr>
 			<td>Article</td>
 			<td><a href="<%=request.getContextPath()%>/addrule.html?id=Article">Add Rule</a></td>
-			<%-- <td><a href="<%=request.getContextPath()%>/addexample.html?id=Syntax">Add Example</a></td> --%>
+			<td><a href="<%=request.getContextPath()%>/addexample.html?id=Article">Add Question</a></td>
+			<td><a href="<%=request.getContextPath()%>/test.html?id=Article">Test</a></td>
 		</tr>
 
 		<c:if test="${!empty rule}">
@@ -199,7 +212,9 @@ td {
 	<table>
 		<tr>
 			<td>Miscellaneous</td>
-			<td><a href="<%=request.getContextPath()%>/addrule.html?id=Miscellaneous">Add Rule</a></td>			
+			<td><a href="<%=request.getContextPath()%>/addrule.html?id=Miscellaneous">Add Rule</a></td>
+			<td><a href="<%=request.getContextPath()%>/addexample.html?id=Miscellaneous">Add Question</a></td>
+			<td><a href="<%=request.getContextPath()%>/test.html?id=Miscellaneous">Test</a></td>			
 		</tr>
 
 		<c:if test="${!empty rule}">
@@ -218,54 +233,6 @@ td {
 	</table>
 	<hr>
 	<!-- Miscellaneous ends -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>

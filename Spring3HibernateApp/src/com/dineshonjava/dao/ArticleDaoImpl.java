@@ -1,12 +1,15 @@
 package com.dineshonjava.dao;
 
+import java.util.Iterator;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.dineshonjava.model.Article;
+import com.dineshonjava.model.QuestionSet;
 import com.dineshonjava.model.rule;
 
 /**
@@ -46,6 +49,28 @@ public class ArticleDaoImpl implements ArticleDao {
 	public List<rule> getrule() {
 		//return (rule) sessionFactory.getCurrentSession().get(rule.class, 1);
 		return  (List<rule>) sessionFactory.getCurrentSession().createCriteria(rule.class).list();
+	}
+
+	@Override
+	public void saveExample(List<QuestionSet> questionsets) {
+		for(QuestionSet questionset:  questionsets){
+			sessionFactory.getCurrentSession().save(questionset);
+		}		
+	}
+
+	@Override
+	public List<QuestionSet> getAllExample(String topic) {
+		//return (List<QuestionSet>) sessionFactory.getCurrentSession().createCriteria(QuestionSet.class).list();
+		//return (List<QuestionSet>) sessionFactory.getCurrentSession().createQuery("from QuestionSet WHERE title = "+topic);
+		
+		if(topic!=null && topic.length()> 0){
+			String SQL_QUERY = "from QuestionSet WHERE title='" + topic + "'";
+			System.out.println(SQL_QUERY);
+			Query query = sessionFactory.getCurrentSession().createQuery(SQL_QUERY);
+			return query.list();	
+		}else{
+			return (List<QuestionSet>) sessionFactory.getCurrentSession().createCriteria(QuestionSet.class).list();
+		}
 	}
 
 }

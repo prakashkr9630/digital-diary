@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dineshonjava.dao.ArticleDao;
 import com.dineshonjava.model.Article;
+import com.dineshonjava.model.QuestionSet;
 import com.dineshonjava.model.rule;
 
 /**
@@ -48,6 +49,17 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public List<rule> getrule() {		
 		return articleDao.getrule();
+	}
+
+	@Override
+	public void saveExample(List<QuestionSet> questionset) {
+		articleDao.saveExample(questionset);
+		
+	}
+
+	@Override
+	public List<QuestionSet> getAllExample(String topic) {
+		return articleDao.getAllExample(topic);
 	}
 
 }
