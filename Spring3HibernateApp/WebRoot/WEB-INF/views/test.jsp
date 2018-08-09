@@ -14,38 +14,47 @@ td {
 	font-family: times new roman;
 	font-size: 20pt;
 }
-</style>
-<script>
-function myFunction(answer) {
-    if(document.getElementById("answer").value == answer){
-    	alert("correct answer")	
-    }else{
-    	alert("Not correct answer")
-    };
-    
+
+input[type="radio"]{
+  width: 30px; 
+  height: 30px; 
 }
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<!-- <script> -->
+<script type="text/javascript">
+    $(document).ready(function(){
+    	
+        $("input[type='radio']").click(function(){
+        	var radioValue = $("input[id='answer']:checked").val();
+            if(radioValue){
+                alert("selected: " + radioValue);
+            }
+            
+            
+        });
+        
+    });
 </script>
+
 
 </head>
 <body>
 
 <table>
-		<%-- <tr>
-			<td>Syntax</td>
-			<td><a href="<%=request.getContextPath()%>/addrule.html?id=Syntax">Add Rule</a></td>
-			<td><a href="<%=request.getContextPath()%>/addexample.html?id=Syntax">Add Question</a></td>
-			<td><a href="<%=request.getContextPath()%>/test.html?id=Syntax">Test</a></td>
-		</tr> --%>
+		
 
 		<c:if test="${!empty questions}">
 			<c:forEach items="${questions}" var="questions">					
 				<tr bgcolor="#1AA904" >
 					<td></td>
 					<td>${questions.id}# <c:out value="${questions.question}" /></td>
-				</tr>		
+				</tr>
+				
+						
 				<tr >
 					<td></td>					
-					<td>
+				<!-- <td>
 					<select name="useranswer" id="answer">
 						<option value="1">Option 1</option>
 						<option value="2">Option 2</option>
@@ -53,9 +62,17 @@ function myFunction(answer) {
 						<option value="4">Option 4</option>
 						<option value="5">Option 5</option>
 					</select>
-					</td>					
+					</td> -->					
+				<td>					
+					<input type="radio" id="answer" name="${questions.id}" value="1"> Option 1<br>
+					<input type="radio" id="answer" name="${questions.id}" value="2"> Option 2<br>
+					<input type="radio" id="answer" name="${questions.id}" value="3"> Option 3<br>
+					<input type="radio" id="answer" name="${questions.id}" value="4"> Option 4<br>
+					<input type="radio" id="answer" name="${questions.id}" value="5"> Option 5<br>					
+				</td>
 					<td></td>					
-					<td><button onclick="myFunction('${questions.correctoption}')">check Answer</button></td>
+					<%-- <td><button onclick="myFunction('${questions.correctoption}')">check Answer</button></td> --%>
+					<!-- <td><input type="button" onclick=""            value="Get Value"></td> -->
 				</tr>
 			</c:forEach>
 		</c:if>

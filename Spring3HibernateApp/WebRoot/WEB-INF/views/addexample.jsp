@@ -44,7 +44,7 @@ font-size: 25px;
 	</c:if>
 
 
-<b>Example:  [{"question":"this is question","correctoption":"A","correctanswer":"this is correct answer"}](format before submitting)</b>
+<b>Example:  [{"question":"this is question","correctoption":"A"}](format before submitting)</b>
 
 <body>
 	<form name="relatearticle" method="POST" action="/sdnext/addexamplefortopic.html">

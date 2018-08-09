@@ -25,8 +25,7 @@ public class QuestionSet {
 	@Column(name = "correctoption")
 	private String correctoption;
 	
-	@Column(name = "correctanswer")
-	private String correctanswer;
+	
 
 	public Integer getId() {
 		return id;
@@ -60,11 +59,5 @@ public class QuestionSet {
 		this.correctoption = correctoption;
 	}
 
-	public String getCorrectanswer() {
-		return correctanswer;
-	}
-
-	public void setCorrectanswer(String correctanswer) {
-		this.correctanswer = correctanswer;
-	}
+	
 }

@@ -60,12 +60,9 @@ public class ArticleDaoImpl implements ArticleDao {
 
 	@Override
 	public List<QuestionSet> getAllExample(String topic) {
-		//return (List<QuestionSet>) sessionFactory.getCurrentSession().createCriteria(QuestionSet.class).list();
-		//return (List<QuestionSet>) sessionFactory.getCurrentSession().createQuery("from QuestionSet WHERE title = "+topic);
 		
 		if(topic!=null && topic.length()> 0){
-			String SQL_QUERY = "from QuestionSet WHERE title='" + topic + "'";
-			System.out.println(SQL_QUERY);
+			String SQL_QUERY = "from QuestionSet WHERE title='" + topic + "'";			
 			Query query = sessionFactory.getCurrentSession().createQuery(SQL_QUERY);
 			return query.list();	
 		}else{
