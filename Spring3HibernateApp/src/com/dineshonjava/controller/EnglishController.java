@@ -2,6 +2,7 @@ package com.dineshonjava.controller;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import org.codehaus.jackson.map.ObjectMapper;
@@ -77,7 +78,8 @@ public class EnglishController {
 	public ModelAndView takeTest(@RequestParam("id") String topic) {
 		currectTopic = topic;
 		ModelAndView mvc = new ModelAndView("test1");
-		 ls = articleService.getAllExample(currectTopic);
+		ls = articleService.getAllExample(currectTopic);
+		Collections.shuffle(ls);
 		 if(index < ls.size() && index < maxQuestion){
 			 mvc.addObject("questions", ls.get(index++));
 			 mvc.addObject("number", index);

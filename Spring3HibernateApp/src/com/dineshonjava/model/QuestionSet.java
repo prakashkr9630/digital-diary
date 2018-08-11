@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
@@ -19,9 +20,11 @@ public class QuestionSet {
 	@Column(name = "title")		
 	private String topic;
 	
+	@Lob
 	@Column(name = "question")
 	private String question;
 	
+	@Lob
 	@Column(name = "correctoption")
 	private String correctoption;
 	

@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,6 +18,10 @@ td {
 
 input[type="radio"]{
   width: 30px; 
+  height: 30px; 
+}
+input[type="text"]{
+  width: 1000px; 
   height: 30px; 
 }
 </style>
@@ -37,7 +42,9 @@ input[type="radio"]{
 					<td><input type="hidden"  name="currectoption" value="${questions.correctoption}"/></td>
 					
 				</tr>				
-						
+				<c:if test = "${fn:length(questions.correctoption) < 2 }">
+				
+				<%-- </c:if> --%>		
 				<tr >
 				<td></td>					
 				<td>					
@@ -49,6 +56,19 @@ input[type="radio"]{
 				</td>
 					<td></td>										
 				</tr>
+				</c:if>
+				<c:if test = "${fn:length(questions.correctoption) > 1 }">
+				
+				<%-- </c:if> --%>		
+				<tr >
+				<td></td>					
+				<td>					
+					<input type="text"  name="useranswer"> <br>
+										
+				</td>
+					<td></td>										
+				</tr>
+				</c:if>
 					<tr>
 				<td></td>
 				<td colspan="2"><input type="submit" value="Submit and Next" /></td>

@@ -25,7 +25,7 @@ td {
 
 
 <table border="1"  >
-
+<a href="<%=request.getContextPath()%>/englishadmin.html">Go Back To main Page</a>
 
 Score : ${score}		
 				<tr >

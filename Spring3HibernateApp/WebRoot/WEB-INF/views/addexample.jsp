@@ -65,7 +65,7 @@ font-size: 25px;
 			
 			<tr>
 				<td></td>
-				<td><textarea name="questionset" rows="5" cols="90" wrap="hard"  ></textarea></td>
+				<td><textarea name="questionset" rows="5" cols="90"   ></textarea></td>
 			</tr>				
 			
 			<tr>							
