@@ -89,18 +89,11 @@ public class EnglishController {
 			 mvc = new ModelAndView("result");
 			 mvc.addObject("result", temp);
 			 mvc.addObject("score",getfinalScore(temp));
-			 for(int i=0;i<ls.size();i++){
-				 ls.remove(i);				 
-			 }
-			 
-			 for(int p=0; p < finalresultList.size();p++){
-				 finalresultList.remove(p);
-			 }
-			 
+			 ls.clear();
+			 finalresultList.clear();
 			 index=0;
 			 currectTopic = null;
 		 }
-		
 		return mvc;
 	}
 	
@@ -202,7 +195,8 @@ public class EnglishController {
 			qset= new QuestionSet();
 			qset.setTopic(topic);
 			qset.setQuestion(qs.getQuestion());
-			qset.setCorrectoption(qs.getCorrectoption());			
+			qset.setCorrectoption(qs.getCorrectoption());
+			qset.setComment(qs.getComment());
 			newList.add(qset);
 		}
 		

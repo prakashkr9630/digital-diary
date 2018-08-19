@@ -23,6 +23,8 @@ input[type="radio"]{
 input[type="text"]{
   width: 1000px; 
   height: 30px; 
+  font-family: times new roman;
+  font-size: 10pt;
 }
 </style>
 
@@ -63,7 +65,7 @@ input[type="text"]{
 				<tr >
 				<td></td>					
 				<td>					
-					<input type="text"  name="useranswer"> <br>
+					<input type="text"  name="useranswer" value="${questions.question}"> <br>
 										
 				</td>
 					<td></td>										

@@ -44,8 +44,8 @@ font-size: 25px;
 	</c:if>
 
 
-<b>Example:  [{"question":"this is question","correctoption":"A"}](format before submitting)</b>
-
+<b>Example:  [{"question":"this is question","correctoption":"A", "comment":"some comment"}]   (format before submitting)</b>
+<a href="<%=request.getContextPath()%>/englishadmin.html">Go Back To main Page</a>
 <body>
 	<form name="relatearticle" method="POST" action="/sdnext/addexamplefortopic.html">
 		
